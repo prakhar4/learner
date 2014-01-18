@@ -1,0 +1,28 @@
+public class point
+{
+	private int x;
+	private int y;
+	
+	public point()
+	{
+		x=y=0;
+	}
+	
+	public point(int x, int y)
+	{
+		this.x=x;
+		this.y=y;
+	}
+	
+	public point(point p)
+	{
+		x=p.x;
+		y=p.y;
+	}
+	
+	public String toString()
+	{
+		return (" the cordinates are "+x+","+y);
+	}
+
+}

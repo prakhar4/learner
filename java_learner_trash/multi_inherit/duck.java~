@@ -1,0 +1,49 @@
+public class duck extends animal
+{
+	private String name;
+	private String breed;
+	animal d1;
+	
+	duck()
+	{					//IF NO CONSTRUCTOR OF BASE CLASS IS INVOKED THEN THE DEFAULT OF BASE IS INVOKED BY COMPILER
+						//BUT IT HAS TO BE THE DEFALUT CONSTRUCTOR ONLY
+		//animal("duck");		THE CONSTRUCTOR OF THE BASE CLASS IS NOT INHERITED--- HENCE CANNOT CALL THIS WAY
+		super("duck");			//THIS IS CORRECT WAY--- 
+		name="default";
+		breed="unknown";
+		p=1;
+	}	
+	
+	duck(String n, String b)
+	{
+		this();				IT IS TO CALL THE ABOVE CONTRUCTOR OF SAME CLASS
+		//super("duck");			/*CAN USE EITHER OF THE TWO STATEMENTS */
+		name=new String(n);
+		breed=new String(b);
+		p=2;
+	}
+	
+	duck(String n)
+	{
+		this();
+		//super("duck");
+		name=new String(n);
+		breed="unknown";
+		p=3;
+	}
+	
+	public String sound()
+	{
+		return (" it create quack quack");
+	}
+	
+	public String toString()		//cannot give this as private as it has to be more realxed than base class
+	{
+		return (super.toString()+" its name is "+name+" its breed is "+breed+" and identy num is "+p);
+												//HOW TO USE THE MEMBERS WITH SAME NAMES IN THE BASE CLASS
+												//USE THE super.membername
+												//ELSE ONLY THE MEMBER FUNCTION OF THIS CLASS IS INVOKED
+												
+												
+	}	
+}

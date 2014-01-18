@@ -1,0 +1,16 @@
+public class tryextra
+{
+	private String t;
+	//t="hello";
+	
+	public tryextra(String tex)
+	{
+		this.t=tex;
+	}
+	
+	public String toString()
+	{
+		return ("returned from try is "+t);
+		
+	}
+}

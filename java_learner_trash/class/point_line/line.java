@@ -1,0 +1,36 @@
+//package point_line;
+
+public class line
+{
+    public point start, end;
+    
+    public line(point p1, point p2)
+    {
+        start=new point(p1);
+        end= new point(p2);
+    }
+    
+    
+    
+    public line (int x1, int y1, int x2, int y2)
+    {
+        start= new point(x1,y1);
+        end= new point(x2,y2);
+        
+    
+    }
+    
+    
+    public double  linelength()
+    {
+            return start.dist(end);
+    }
+
+    public void disp()
+    {
+        System.out.println("the line has "+start+" and "+  end);
+    
+    }
+
+
+}

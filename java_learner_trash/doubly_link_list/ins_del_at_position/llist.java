@@ -1,0 +1,101 @@
+public class llist
+{
+	private class list
+	{
+		Object item;
+		list next;
+		list prev;
+		
+		public list(Object i)
+		{
+			item=i;
+			next=null;
+			prev=null;
+		}	
+	}
+	
+	private list start;
+	private list end;
+	private list temp;
+	private list more;
+	
+	public llist(Object i)
+	{
+		additem(i);
+	}
+	
+	public llist(Object[] t)
+	{
+		int i;
+		for(i=0;i<t.length;i++)
+		{
+			additem(t[i]);
+		}
+	}
+	
+	public void additem(Object i)
+	{
+		temp=new list(i);
+		if(start==null)
+		{
+			start=end=temp;
+		}
+		else
+		{
+			temp.prev=end;
+			end.next=temp;
+			end=temp;
+		}
+	}
+	
+	public void ins(Object o, int pos)
+	{
+		int i;
+		temp=start;
+		for(i=0;i<pos-2;i++)
+			temp=temp.next;
+		
+		more=new list(o);
+		
+		more.next=temp.next;
+		temp.next.prev=more;
+		more.prev=temp;
+		temp.next=more;
+	}
+	
+	public void del(int pos)
+	{
+		int i;
+		temp=start;
+		
+		for(i=0;i<pos-1;i++)
+			temp=temp.next;
+		more=temp;
+		temp.prev.next=more.next;
+		temp.next.prev=more.prev;
+	}
+	
+	
+	
+	
+	public void see()
+	{
+		temp=start;
+		System.out.println("Printing forward");
+		while(temp!=null)
+		{
+			System.out.println(" "+temp.item);
+			temp=temp.next;
+		}
+		
+		temp=end;
+		System.out.println("Printing backward");
+		while(temp!=null)
+		{
+			System.out.println(" "+temp.item);
+			temp=temp.prev;
+		}
+	
+	}
+
+}
